@@ -37,7 +37,7 @@ def kanye_bot():
 
         # Print the values to the console
         print("User:", user)
-        print("Password:", password)
+        # print("Password:", password)
         print("Host:", host)
         print("Port:", port)
         print("Database:", database)
