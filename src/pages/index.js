@@ -16,7 +16,7 @@ function iMessage() {
     const newMessage = { user: true, text: userInput };
     setMessages([...messages, newMessage, { user: false, text: "loading" }]);
     setMuskTyping(true);
-    axios.post('http://localhost:8080/bot', {
+    axios.post('http://localhost:8081/bot', {
       message: userInput
     }, {
       headers: {
@@ -45,7 +45,7 @@ function iMessage() {
     <>
       <Head>
         <title>
-          Musk Chatbot - Metaschool
+          Musk Chatbot
         </title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
       </Head>
@@ -63,7 +63,6 @@ function iMessage() {
           <i className="fa fa-video-camera video-icon"></i>
         </div>
         <div className="chat-window">
-          <p className="chat-bot-header">Powered by <a className="ref-link" href="http://metaschool.so/" target="_blank" rel="noopener noreferrer">metaschool 🔮</a></p>
           {messages.map((message, index) => (
             <div key={index} className="message-container">
               {message.user ? (
